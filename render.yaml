@@ -1,0 +1,14 @@
+services:
+  - type: web
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python bot.py"
+    envVars:
+      BOT_TOKEN: "7679785758:AAG1xMRhYDyDx_Rx-FXB8hTzXtCQJQAbV_c"
+      ADMIN_ID: "8164522562"
+      CHANNEL_USERNAME: "@Kaiziku_Otaku"
+cron:
+  jobs:
+    - name: send-latest-anime
+      schedule: "0 */6 * * *"
+      command: "python scheduler.py"
